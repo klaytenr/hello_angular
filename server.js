@@ -26,11 +26,11 @@ app.get('/tasks', function(req, res){
 })
 
 app.get('/tasks/:id', function(req, res){
-    Task.findOne({id: req.params.id}, function(err, tasks){
+    Task.findOne({_id: req.params.id}, function(err, task){
         if(err){
             res.json({message: 'Error', error: err});
         }else{
-            res.json({message: 'This is one task', data: tasks});
+            res.json({message: 'This is one task', data: task});
         }
     })
 })
