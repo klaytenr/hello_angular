@@ -8,12 +8,12 @@ export class HttpService {
     this.getOneTask("5aa4423196235656c7bf83d3");
   }
   getTasks(){
-    let tempObservable = this._http.get('/tasks');
-    tempObservable.subscribe(data => console.log('Got our tasks!', data));
+    return this._http.get('/tasks');
   }
   getOneTask(id){
-    let temp = this._http.get('/tasks/'+id);
-    temp.subscribe(data => console.log('Got our one task!', data));
+    // let temp = this._http.get('/tasks/'+id);
+    // temp.subscribe(data => console.log('Got our one task!', data));
+    return this._http.get('/tasks/'+id);
   }
 
 }
